@@ -12472,9 +12472,7 @@ html.boxed .slider-container {
 	width: 100%;
 }
 
-.thumb-info:hover .thumb-info-wrapper:after {
-	opacity: 1;
-}
+
 
 .thumb-info:hover .thumb-info-action-icon {
 	right: 0;

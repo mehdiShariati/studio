@@ -7,6 +7,14 @@
             font-weight: bold;
 
         }
+        .thumb-info:hover .thumb-info-wrapper:after {
+            opacity: 1;
+        }
+        @media (max-width: 680px) {
+            #gp-narges{
+                font-size: 18px!important;
+            }
+        }
     </style>
         <div class="slider-container rev_slider_wrapper" style="height: 100vh;">
             <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': 1170, 'gridheight': 700, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 300, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }}">
@@ -257,8 +265,8 @@
         <div id="section-main" class="container">
 
             <div class="row text-center pt-3">
-                <div class="col-md-10 mx-md-auto">
-                    <h1 style="direction: rtl;font-family: Erfan" class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation" data-appear-animation="fadeInUpShorter">
+                <div class="col-md-12 mx-md-auto">
+                    <h4 id="gp-narges" style="direction: rtl;font-family: Erfan" class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation" data-appear-animation="fadeInUpShorter">
                         <span>گروه هنری نرگس </span>
                         <span class="word-rotator-words bg-dark">
 									<b class="is-visible">صمیمانه</b>
@@ -266,59 +274,59 @@
 
 								</span>
                         <span> در خدمت شماست</span>
-                    </h1>
+                    </h4>
 
                 </div>
             </div>
 
         </div>
 
-        <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-            <div class="home-concept mt-5">
-                <div class="container">
+{{--        <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">--}}
+{{--            <div class="home-concept mt-5">--}}
+{{--                <div class="container">--}}
 
-                    <div class="row text-center">
-                        <div class="col-lg-2 ml-lg-auto">
-                            <div class="process-image">
-                                <img src="/photoo site/web/date-icon.webp" alt="" />
-                                <strong style="font-family: Erfan;">تاریخ مراسم شما</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="process-image process-image-on-middle">
-                                <img src="/photoo site/web/time-icon.webp" alt="" />
-                                <strong style="font-family: Erfan;">ساعتش؟</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="process-image">
-                                <img src="/photoo site/web/loction-icon.webp" alt="" />
-                                <strong style="font-family: Erfan;">آدرس</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 ml-lg-auto">
-                            <div class="project-image">
-                                <div id="fcSlideshow" class="fc-slideshow">
-                                    <ul class="fc-slides">
+{{--                    <div class="row text-center">--}}
+{{--                        <div class="col-lg-2 ml-lg-auto">--}}
+{{--                            <div class="process-image">--}}
+{{--                                <img src="/photoo site/web/date-icon.webp" alt="" />--}}
+{{--                                <strong style="font-family: Erfan;">تاریخ مراسم شما</strong>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-lg-2">--}}
+{{--                            <div class="process-image process-image-on-middle">--}}
+{{--                                <img src="/photoo site/web/time-icon.webp" alt="" />--}}
+{{--                                <strong style="font-family: Erfan;">ساعتش؟</strong>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-lg-2">--}}
+{{--                            <div class="process-image">--}}
+{{--                                <img src="/photoo site/web/loction-icon.webp" alt="" />--}}
+{{--                                <strong style="font-family: Erfan;">آدرس</strong>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-lg-4 ml-lg-auto">--}}
+{{--                            <div class="project-image">--}}
+{{--                                <div id="fcSlideshow" class="fc-slideshow">--}}
+{{--                                    <ul class="fc-slides">--}}
 
-                                        <li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/photoo site/web/sabt sefaresh-icon.webp" alt="" /></a></li>
+{{--                                        <li><a href="portfolio-single-wide-slider.html"><img class="img-responsive" src="/photoo site/web/sabt sefaresh-icon.webp" alt="" /></a></li>--}}
 
-                                    </ul>
-                                </div>
-                                <strong style="font-family: Erfan;"  class="our-work">ثبت سفارش</strong>
-                            </div>
-                        </div>
-                    </div>
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                                <strong style="font-family: Erfan;"  class="our-work">ثبت سفارش</strong>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                </div>
-            </div>
-        </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <div class="container">
             <div class="row">
                 <div class="col">
                     <hr class="solid my-5">
-                    <h4 class="text-center"> نمونه کار های ما</h4>
+                    <h4 class="text-center">دسته بندی نمونه کار</h4>
                 </div>
             </div>
             <div class="image-gallery sort-destination full-width">

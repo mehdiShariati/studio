@@ -31,15 +31,8 @@
 									<span class="thumb-info thumb-info-centered-info thumb-info-no-borders border-radius-0 m-0">
 										<span class="thumb-info-wrapper border-radius-0">
 											<img src="/uploads/images/portfolio/{{$images->image}}" class="img-fluid border-radius-0" alt="{{$images->alt}}">
-											<span class="thumb-info-title">
-												<span class="thumb-info-inner">{{str_replace("portfolio_category|","",$item->title)}}</span>
-											</span>
-											<span class="thumb-info-action">
-                                                <a href="/uploads/images/portfolio/{{$images->image}}" class="lightbox-portfolio">
-													<span class="thumb-info-action-icon thumb-info-action-icon-light"><i class="fas fa-search text-dark"></i></span>
-												</a>
 
-											</span>
+
 										</span>
 									</span>
 
