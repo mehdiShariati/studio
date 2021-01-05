@@ -32,7 +32,8 @@
                         <td>{{$item->created_at}}</td>
 
                         <td>
-                            <form action="{{route("tag.destroy",['tag'=>$item->id])}}" method="post">@csrf @method("delete")<input type="submit" value="حذف"  class="btn btn-danger confirmation" ></form>
+                            <form action="{{route("portfolio.destroy",['image'=>$item->id])}}" method="post">@csrf @method("delete")<input type="submit" value="حذف"  class="btn btn-danger confirmation" ></form>
+                            <a class="btn btn-primary" href="{{route("portfolio.edit",['image'=>$item->id])}}">ویرایش</a>
                         </td>
 
                     </tr>

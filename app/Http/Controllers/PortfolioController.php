@@ -61,7 +61,7 @@ class PortfolioController extends Controller
             $image->save();
             $tag->images()->attach($image->id);
         }
-        return  back()->with('success',"نمونه کار  با موفقیت ثبت شد");;
+        return  back()->with('success',"نمونه کار  با موفقیت ثبت شد");
 
 //        $this->validate($request, [
 //
@@ -139,34 +139,53 @@ class PortfolioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  Image  $Image
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit(Image $image)
     {
-        //
+        $cats=Tag::where("tag_pipe",md5("portfolio_category"))->get();
+
+        return view("admin.portfolio.edit",compact(["cats","image"]));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Portfolio  $portfolio
-     * @return \Illuminate\Http\Response
+     * @param  Image  $image
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request, Image $image)
     {
-        //
+        $request->validate([
+            "alt_image"=>"required",
+            "image"=>"required",
+            "tag_id"=>"required"
+
+        ]);
+        if ($request->file('image')->isValid()) {
+            $fileName = time() . '.' . $request->image->extension();
+
+            $request->image->move(public_path('uploads/images/portfolio'), $fileName);
+            $tag = Tag::find($request->get("tag_id"));
+            $alt = $request->get("alt_image");
+            $image->image = $fileName;
+            $image->alt = $alt;
+            $image->save();
+            $tag->images()->attach($image->id);
+        }
+        return  back()->with('success',"نمونه کار  با موفقیت ویرایش شد");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Portfolio  $portfolio
-     * @return \Illuminate\Http\Response
+     * @param  Image  $image
+
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy(Image $image)
     {
-        //
+        $image->delete();
+        return back();
     }
 }

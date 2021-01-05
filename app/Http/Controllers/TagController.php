@@ -88,7 +88,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        //
+
     }
 
     /**
@@ -99,7 +99,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+        return view("admin.tag.edit",compact("tag"));
     }
 
     /**
@@ -111,7 +111,46 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $request->validate([
+            "title"=>"required",
+            "slug"=>"required"
+        ]);
+       ;
+        $title=$request->get("title");
+        $slug=$request->get("slug");
+        $body=$request->get("body");
+        $meta_title=$request->get("meta_title");
+        $meta_description=$request->get("meta_description");
+        $meta_keywords=$request->get("meta_keywords");
+
+        $temp=explode("|",$title);
+        $tag_pipe=md5($temp[0]);
+
+
+        $tag->title=$title;
+        $tag->slug=$slug;
+        $tag->body=$body;
+        $tag->meta_title=$meta_title;
+        $tag->meta_description=$meta_description;
+        $tag->meta_keywords=$meta_keywords;
+        $tag->tag_pipe=$tag_pipe;
+        $tag->alt_image=$request->get("alt_text");;
+
+        if ($request->file('image')->isValid()) {
+            $fileName = time().'.'.$request->image->extension();
+
+            $request->image->move(public_path('uploads/images/tag'), $fileName);
+
+            $tag->image=$fileName;
+            $tag->has_pic=1;
+//            $image=new Image();
+//            $image->image=$fileName;
+//            $image->alt=$alt;
+//            $image->save();
+//            $tag->images()->attach($image->id);
+        }
+        $tag->save();
+        return redirect(route("tag.index"));
     }
 
     /**

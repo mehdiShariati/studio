@@ -31,6 +31,8 @@
 
                         <td>
                             <form action="{{route("tag.destroy",['tag'=>$item->id])}}" method="post">@csrf @method("delete")<input type="submit" value="حذف"  class="btn btn-danger confirmation" ></form>
+                            <a class="btn btn-primary" href="{{route("tag.edit",['tag'=>$item->id])}}">ویرایش</a>
+
                         </td>
 
                     </tr>

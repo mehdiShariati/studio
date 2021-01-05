@@ -36,6 +36,9 @@ Route::prefix('admin')->middleware(['auth',\App\Http\Middleware\CheckAdminMiddle
     Route::post('/createCategoryPortfolio',Category_portfoliosController::class."@store");
     Route::get("/createPortfolio",PortfolioController::class."@create");
     Route::post("/createPortfolio",PortfolioController::class."@store");
+    Route::get("{image}/edit",PortfolioController::class."@edit")->name("portfolio.edit");
+    Route::put("{image}/update",PortfolioController::class."@update")->name("portfolio.update");
+    Route::delete("{image}/destroy",PortfolioController::class."@destroy")->name("portfolio.destroy");
 
 
 });
